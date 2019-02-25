@@ -14,15 +14,14 @@ CLOCK = pygame.time.Clock()
 FPS = 60
 
 
-
-class Racket(pygame.sprite.Sprite):# создание платформ(ракеток)
+class Racket(pygame.sprite.Sprite): # создание платформ(ракеток)
     def __init__(self, centery, centerx, player):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface((10, 60))
         self.image.fill(BLACK)
         self.rect = self.image.get_rect()
-        self.rect.centerx = centerx# центр поля по х
-        self.rect.centery = centery# центр поля по у
+        self.rect.centerx = centerx # центр поля по х
+        self.rect.centery = centery # центр поля по у
         self.speedy = 0
         self.player = player
 
@@ -88,6 +87,7 @@ class Ball(pygame.sprite.Sprite):# создание мячика
             self.rect.centerx = WIDTH/2# возвращение мяча в центр
             self.rect.centery = HEIGHT/2
             self.speedx = random.choice([2, -2])
+
 
 if __name__ == '__main__':
     #Создаем группу спрайтов и добавляем наши ракетки и мяч
